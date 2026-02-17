@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volna — Web Messenger</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <header class="sidebar__top">
+          <h1>Volna</h1>
+          <button class="icon-btn" aria-label="Новый чат">+</button>
+        </header>
+
+        <div class="search-box">
+          <input type="text" placeholder="Поиск" aria-label="Поиск чатов" />
+        </div>
+
+        <nav class="chat-list" aria-label="Список чатов">
+          <button class="chat-item chat-item--active" data-chat="design">
+            <div class="avatar">DS</div>
+            <div class="chat-meta">
+              <div class="chat-meta__line">
+                <strong>Design Team</strong>
+                <span>12:49</span>
+              </div>
+              <p>Готовы к демо в 16:00 🚀</p>
+            </div>
+          </button>
+
+          <button class="chat-item" data-chat="product">
+            <div class="avatar">PM</div>
+            <div class="chat-meta">
+              <div class="chat-meta__line">
+                <strong>Product</strong>
+                <span>11:08</span>
+              </div>
+              <p>Обновили roadmap на квартал.</p>
+            </div>
+          </button>
+
+          <button class="chat-item" data-chat="family">
+            <div class="avatar">FA</div>
+            <div class="chat-meta">
+              <div class="chat-meta__line">
+                <strong>Family</strong>
+                <span>Вчера</span>
+              </div>
+              <p>Не забудь созвон в субботу ❤️</p>
+            </div>
+          </button>
+        </nav>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <h2 id="chatTitle">Design Team</h2>
+            <p id="chatStatus">6 участников • online</p>
+          </div>
+          <div class="chat-actions">
+            <button class="icon-btn" aria-label="Позвонить">📞</button>
+            <button class="icon-btn" aria-label="Инфо">ℹ️</button>
+          </div>
+        </header>
+
+        <section class="messages" id="messages" aria-live="polite"></section>
+
+        <form class="composer" id="composer">
+          <input
+            type="text"
+            id="messageInput"
+            placeholder="Напишите сообщение..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Отправить</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
